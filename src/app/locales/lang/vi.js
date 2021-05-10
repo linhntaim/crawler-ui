@@ -98,6 +98,7 @@ export default {
         complete: 'Complete',
         confirm: 'Confirm',
         create: 'Create',
+        crawl: 'Crawl',
         delete: 'Delete',
         download: 'Download',
         edit: 'Edit',

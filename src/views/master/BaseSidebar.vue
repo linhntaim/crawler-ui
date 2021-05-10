@@ -103,6 +103,20 @@ const defaultMenuItems = isLoggedIn => isLoggedIn ? [
     // TODO
 ] : [
     // TODO:
+    {
+        title: 'crawler',
+        iconClass: 'fas fa-fw fa-robot',
+        matches: [/^\/crawler/],
+        active: false,
+        children: [
+            {
+                title: 'chia_se_nhac',
+                to: {
+                    name: 'chia_se_nhac_index',
+                },
+            },
+        ],
+    },
 
     // TODO
 ]

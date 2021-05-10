@@ -97,6 +97,7 @@ export default {
         close: 'Close',
         complete: 'Complete',
         confirm: 'Confirm',
+        crawl: 'Crawl',
         create: 'Create',
         delete: 'Delete',
         download: 'Download',
