@@ -222,6 +222,8 @@ export default {
             calendar_sample: 'Calendar',
             select2_sample: 'Select2',
             // TODO:
+            crawler: 'Crawler',
+            chia_se_nhac: 'Chiasenhac.vn',
 
             // TODO
         },

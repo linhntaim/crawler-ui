@@ -126,11 +126,11 @@ export const routes = [
             middleware: all,
         },
         children: [
-            {
-                path: '/',
-                name: 'root',
-                component: () => import('../../views/pages/Root'),
-            },
+            // {
+            //     path: '/',
+            //     name: 'root',
+            //     component: () => import('../../views/pages/Root'),
+            // },
             {
                 path: 'clear-site-data',
                 name: 'clear_site_data',
@@ -138,7 +138,39 @@ export const routes = [
             },
             // TODO:
             //  Extra Not-Authenticated Routes
-
+            {
+                path: '',
+                component: () => import('../../views/master/BaseAuth'),
+                children: [
+                    {
+                        path: '/',
+                        name: 'root',
+                        component: () => import('../../views/pages/Home'),
+                    },
+                    {
+                        path: '404',
+                        name: 'base_not_found',
+                        component: () => import('../../views/error/NotFound'),
+                    },
+                    {
+                        path: 'crawler',
+                        component: () => import('../../views/pages/crawler/Base'),
+                        children: [
+                            {
+                                path: 'chia-se-nhac',
+                                component: () => import('../../views/pages/crawler/chia-se-nhac/Base'),
+                                children: [
+                                    {
+                                        path: '/',
+                                        name: 'chia_se_nhac_index',
+                                        component: () => import('../../views/pages/crawler/chia-se-nhac/Index'),
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
             // TODO
             {
                 path: '',
@@ -147,11 +179,11 @@ export const routes = [
                     requireAuth: true,
                 },
                 children: [
-                    {
-                        path: '404',
-                        name: 'base_auth_not_found',
-                        component: () => import('../../views/error/NotFound'),
-                    },
+                    // {
+                    //     path: '404',
+                    //     name: 'base_auth_not_found',
+                    //     component: () => import('../../views/error/NotFound'),
+                    // },
                     // TODO:
                     //  Extra Authenticated Routes
                     {
