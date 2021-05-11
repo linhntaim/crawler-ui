@@ -223,6 +223,8 @@ export default {
             calendar_sample: 'Calendar',
             select2_sample: 'Select2',
             // TODO:
+            crawler: 'Crawler',
+            crawler_csna: 'Chiasenhac.vn (Audio)',
 
             // TODO
         },

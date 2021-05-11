@@ -16,6 +16,7 @@ import {PrerequisiteService} from './admin/prerequisite'
 import {RoleService} from './admin/role'
 import {SystemLogService} from './admin/system-log'
 // TODO: Import
+import {CrawlUrlService as CsnaCrawlUrlService} from './crawler/csna/crawl-url'
 
 // TODO
 
@@ -33,5 +34,6 @@ export const adminAppOptionService = () => new AppOptionService()
 export const adminDataExportService = () => new DataExportService()
 export const adminRoleService = () => new RoleService()
 // TODO: Export
+export const csnaCrawlUrlService = () => new CsnaCrawlUrlService()
 
 // TODO

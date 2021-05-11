@@ -110,9 +110,9 @@ const defaultMenuItems = isLoggedIn => isLoggedIn ? [
         active: false,
         children: [
             {
-                title: 'chia_se_nhac',
+                title: 'crawler_csna',
                 to: {
-                    name: 'chia_se_nhac_index',
+                    name: 'crawler_csna_index',
                 },
             },
         ],

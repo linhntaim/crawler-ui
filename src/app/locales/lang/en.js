@@ -224,7 +224,7 @@ export default {
             select2_sample: 'Select2',
             // TODO:
             crawler: 'Crawler',
-            chia_se_nhac: 'Chiasenhac.vn',
+            crawler_csna: 'Chiasenhac.vn (Audio)',
 
             // TODO
         },

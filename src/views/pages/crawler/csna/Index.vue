@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import {mapActions} from '@linhntaim/vue-uses'
+
 export default {
     name: 'Index',
     data() {
@@ -36,8 +38,24 @@ export default {
         },
     },
     methods: {
+        ...mapActions({
+            crawlUrlCreate: 'csnaCrawlUrl/create',
+        }),
         onSubmitted() {
-
+            this.loading = true
+            this.crawlUrlCreate({
+                params: {
+                    url: this.url,
+                },
+                doneCallback: data => {
+                    this.loading = false
+                    console.log(data)
+                },
+                errorCallback: err => {
+                    this.loading = false
+                    this.$bus.emit('error', {messages: err.getMessages(), extra: err.getExtra()})
+                },
+            })
         },
     },
 }

@@ -157,13 +157,13 @@ export const routes = [
                         component: () => import('../../views/pages/crawler/Base'),
                         children: [
                             {
-                                path: 'chia-se-nhac',
-                                component: () => import('../../views/pages/crawler/chia-se-nhac/Base'),
+                                path: 'csna',
+                                component: () => import('../../views/pages/crawler/csna/Base'),
                                 children: [
                                     {
                                         path: '/',
-                                        name: 'chia_se_nhac_index',
-                                        component: () => import('../../views/pages/crawler/chia-se-nhac/Index'),
+                                        name: 'crawler_csna_index',
+                                        component: () => import('../../views/pages/crawler/csna/Index'),
                                     },
                                 ],
                             },

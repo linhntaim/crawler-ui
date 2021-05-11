@@ -14,6 +14,7 @@ import dataExport from './data-export'
 import role from './role'
 // TODO
 // TODO:
+import csnaCrawlUrl from './crawler/csna/crawl-url'
 
 // TODO
 
@@ -30,6 +31,7 @@ export const store = {
     role,
     // TODO
     // TODO:
+    csnaCrawlUrl,
 
     // TODO
 }
