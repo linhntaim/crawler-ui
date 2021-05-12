@@ -165,6 +165,11 @@ export const routes = [
                                         name: 'crawler_csna_index',
                                         component: () => import('../../views/pages/crawler/csna/Index'),
                                     },
+                                    {
+                                        path: 'url/:id',
+                                        name: 'crawler_csna_url___show',
+                                        component: () => import('../../views/pages/crawler/csna/crawl-url/Show'),
+                                    },
                                 ],
                             },
                         ],

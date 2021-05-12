@@ -17,6 +17,8 @@ import {RoleService} from './admin/role'
 import {SystemLogService} from './admin/system-log'
 // TODO: Import
 import {CrawlUrlService as CsnaCrawlUrlService} from './crawler/csna/crawl-url'
+import {CrawlSongService as CsnaCrawlSongService} from './crawler/csna/crawl-song'
+import {CrawlFileService as CsnaCrawlFileService} from './crawler/csna/crawl-file'
 
 // TODO
 
@@ -35,5 +37,7 @@ export const adminDataExportService = () => new DataExportService()
 export const adminRoleService = () => new RoleService()
 // TODO: Export
 export const csnaCrawlUrlService = () => new CsnaCrawlUrlService()
+export const csnaCrawlSongService = () => new CsnaCrawlSongService()
+export const csnaCrawlFileService = () => new CsnaCrawlFileService()
 
 // TODO

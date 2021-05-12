@@ -15,6 +15,8 @@ import role from './role'
 // TODO
 // TODO:
 import csnaCrawlUrl from './crawler/csna/crawl-url'
+import csnaCrawlSong from './crawler/csna/crawl-song'
+import csnaCrawlFile from './crawler/csna/crawl-file'
 
 // TODO
 
@@ -32,6 +34,8 @@ export const store = {
     // TODO
     // TODO:
     csnaCrawlUrl,
+    csnaCrawlSong,
+    csnaCrawlFile,
 
     // TODO
 }

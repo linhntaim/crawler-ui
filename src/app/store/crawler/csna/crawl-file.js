@@ -1,68 +1,68 @@
-import {csnaCrawlUrlService as crawlUrlService} from '../../../services/default'
+import {csnaCrawlFileService as crawlFileService} from '../../../services/default'
 
 export default {
     namespaced: true,
     state: () => ({
-        crawlUrls: [],
-        crawlUrl: {},
+        crawlFiles: [],
+        crawlFile: {},
     }),
     getters: {
-        crawlUrls: state => state.crawlUrls,
-        crawlUrl: state => state.crawlUrl,
+        crawlFiles: state => state.crawlFiles,
+        crawlFile: state => state.crawlFile,
     },
     mutations: {
-        setCrawlUrl(state, {crawlUrl}) {
-            state.crawlUrl = crawlUrl
+        setCrawlUrl(state, {crawlFile}) {
+            state.crawlFile = crawlFile
         },
     },
     actions: {
         search({state}, {params, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().index(params, (data) => {
-                state.crawlUrls = data.models
+            crawlFileService().index(params, (data) => {
+                state.crawlFiles = data.models
                 doneCallback(data.pagination)
             }, errorCallback, alwaysCallback)
         },
 
         export(store, {params, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().export(params, doneCallback, errorCallback, alwaysCallback)
+            crawlFileService().export(params, doneCallback, errorCallback, alwaysCallback)
         },
 
         import(store, {file, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().import(file, doneCallback, errorCallback, alwaysCallback)
+            crawlFileService().import(file, doneCallback, errorCallback, alwaysCallback)
         },
 
         create({state}, {params, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().store(params, (data) => {
-                state.crawlUrl = data.model
+            crawlFileService().store(params, (data) => {
+                state.crawlFile = data.model
                 doneCallback(data)
             }, errorCallback, alwaysCallback)
         },
 
         getById({state}, {id, doneCallback, errorCallback, alwaysCallback}) {
-            if (state.crawlUrl.id && state.crawlUrl.id == id) {
+            if (state.crawlFile.id && state.crawlFile.id == id) {
                 doneCallback()
                 return
             }
-            crawlUrlService().show(id, (data) => {
-                state.crawlUrl = data.model
+            crawlFileService().show(id, (data) => {
+                state.crawlFile = data.model
                 doneCallback()
             }, errorCallback, alwaysCallback)
         },
 
         edit({state}, {id, params, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().update(id, params, (data) => {
-                state.crawlUrl = data.model
+            crawlFileService().update(id, params, (data) => {
+                state.crawlFile = data.model
                 doneCallback()
             }, errorCallback, alwaysCallback)
         },
 
         delete(store, {ids, doneCallback, errorCallback, alwaysCallback}) {
-            crawlUrlService().bulkDestroy(ids, {}, doneCallback, errorCallback, alwaysCallback)
+            crawlFileService().bulkDestroy(ids, {}, doneCallback, errorCallback, alwaysCallback)
         },
 
         destruct({state}) {
-            state.crawlUrls = []
-            state.crawlUrl = {}
+            state.crawlFiles = []
+            state.crawlFile = {}
         },
     },
 }

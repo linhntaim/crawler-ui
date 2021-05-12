@@ -379,6 +379,28 @@ export default {
         },
         // TODO
         // TODO:
+        _crawler: {
+            _csna: {
+                _: 'Chiasenhac.vn (Audio)',
+                def: {
+                    status: {
+                        completed: 'Completed',
+                        fresh: 'Fresh',
+                    },
+                },
+                album: 'Album',
+                artist: 'Artist',
+                crawled_at: 'Crawled at',
+                date: 'Date',
+                status: 'Status',
+                title: 'Title',
+                _url: {
+                    _show: {
+                        _: 'URL: {url}',
+                    },
+                },
+            },
+        },
 
         // TODO
     },

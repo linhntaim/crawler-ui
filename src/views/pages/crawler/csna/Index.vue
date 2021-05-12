@@ -17,10 +17,12 @@
                         button.btn.btn-primary.float-right(:disabled="loading || disabled" type="submit")
                             i.fas.fa-circle-notch.fa-spin(v-if="loading")
                             span(v-else) {{ $t('actions.crawl') }}
+
 </template>
 
 <script>
-import {mapActions} from '@linhntaim/vue-uses'
+import {mapActions, mapGetters} from '@linhntaim/vue-uses'
+import {headTitle} from '../../../../app/utils'
 
 export default {
     name: 'Index',
@@ -32,9 +34,19 @@ export default {
         }
     },
     computed: {
+        ...mapGetters({
+            crawlUrl: 'csnaCrawlUrl/crawlUrl',
+        }),
         disabled() {
             const url = this.url.trim()
             return !url || !/^https?:\/\/(|.+\.)chiasenhac.vn/.test(url)
+        },
+    },
+    head: {
+        title() {
+            return {
+                inner: headTitle(this.$t('pages._crawler._csna._')),
+            }
         },
     },
     methods: {
@@ -47,9 +59,14 @@ export default {
                 params: {
                     url: this.url,
                 },
-                doneCallback: data => {
+                doneCallback: () => {
                     this.loading = false
-                    console.log(data)
+                    this.$router.push({
+                        name: 'crawler_csna_url___show',
+                        params: {
+                            id: this.crawlUrl.id,
+                        },
+                    })
                 },
                 errorCallback: err => {
                     this.loading = false
