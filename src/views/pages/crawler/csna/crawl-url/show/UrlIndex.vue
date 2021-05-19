@@ -21,7 +21,7 @@
                             th.text-center {{ $t('actions.actions') }}
                     tbody
                         tr(v-if="crawlUrls.length <= 0")
-                            td.text-center.py-4.text-gray-500(colspan="3")
+                            td.text-center.py-4.text-gray-500(colspan="4")
                                 span(v-if="loading") {{ $t('actions.loading') }}
                                 span(v-else) {{ $t('pages.no_items') }}
                         tr(v-for="(crawlUrl, index) in crawlUrls")
@@ -44,8 +44,8 @@ import {storeHandler} from '../../../../../../app/utils'
 import {mapActions, mapGetters, mapMutations} from '@linhntaim/vue-uses'
 import {DataPlot, Paginator} from '@linhntaim/vue-utils'
 import {CSNA_STATUS_DEF, ITEMS_PER_PAGE_LIST} from '../../../../../../app/config'
-import PaginatorComponent from '../../../../../components/Paginator'
 import CrawlUrlStatusBadge from '../CrawlUrlStatusBadge'
+import PaginatorComponent from '../../../../../components/Paginator'
 
 export default {
     name: 'UrlIndex',
@@ -101,7 +101,7 @@ export default {
         search() {
             this.loading = true
             const params = this.params.data()
-            params.crawl_url = this.crawlUrl.id
+            params.from_crawl_url = this.crawlUrl.id
             this.crawlUrlSearch({
                 params: params,
                 doneCallback: (pagination) => {

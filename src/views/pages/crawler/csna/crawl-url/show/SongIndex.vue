@@ -19,7 +19,7 @@
                             th {{ $t('pages._crawler._csna.date') }}
                     tbody
                         tr(v-if="crawlSongs.length <= 0")
-                            td.text-center.py-4.text-gray-500(colspan="3")
+                            td.text-center.py-4.text-gray-500(colspan="5")
                                 span(v-if="loading") {{ $t('actions.loading') }}
                                 span(v-else) {{ $t('pages.no_items') }}
                         tr(v-for="(crawlSong, index) in crawlSongs")
@@ -86,7 +86,7 @@ export default {
         search() {
             this.loading = true
             const params = this.params.data()
-            params.crawl_url = this.crawlUrl.id
+            params.from_crawl_url = this.crawlUrl.id
             this.crawlSongSearch({
                 params: params,
                 doneCallback: (pagination) => {

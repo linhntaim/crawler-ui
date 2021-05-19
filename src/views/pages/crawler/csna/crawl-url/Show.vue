@@ -18,11 +18,6 @@
                         .col-md-8.col-lg-10
                             .form-control-plaintext
                                 crawl-url-status-badge(:status="crawlUrl.status")
-                    .form-group.row(v-if="crawlUrl.status === statusDefs.completed || crawlUrl.status === statusDefs.uncompleted")
-                        label.col-form-label.col-md-4.col-lg-2 {{ $t('pages._crawler._csna.crawled_at') }}
-                        .col-md-8.col-lg-10
-                            .form-control-plaintext
-                                | {{ crawlUrl.sd_st_created_at }}
             url-index(ref="urls" @crawled="onCrawled" @viewed="onViewed")
             song-index(ref="songs")
             file-index(ref="files")
@@ -31,11 +26,11 @@
 <script>
 import {headTitle, timeoutCaller} from '../../../../../app/utils'
 import {mapActions, mapGetters} from '@linhntaim/vue-uses'
+import {CSNA_STATUS_DEF} from '../../../../../app/config'
+import CrawlUrlStatusBadge from './CrawlUrlStatusBadge'
 import FileIndex from './show/FileIndex'
 import SongIndex from './show/SongIndex'
 import UrlIndex from './show/UrlIndex'
-import CrawlUrlStatusBadge from './CrawlUrlStatusBadge'
-import {CSNA_STATUS_DEF} from '../../../../../app/config'
 
 export default {
     name: 'Show',

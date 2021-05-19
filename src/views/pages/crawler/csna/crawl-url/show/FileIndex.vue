@@ -78,7 +78,7 @@ export default {
         search() {
             this.loading = true
             const params = this.params.data()
-            params.crawl_url = this.crawlUrl.id
+            params.from_crawl_url = this.crawlUrl.id
             this.crawlFileSearch({
                 params: params,
                 doneCallback: (pagination) => {
